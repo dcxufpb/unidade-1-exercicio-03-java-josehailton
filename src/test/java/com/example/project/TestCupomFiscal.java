@@ -80,21 +80,27 @@ public class TestCupomFiscal {
 	@Test
 	public void exercicio02_Customizado() {
 		//Defina seus próprios valores para as variáveis a seguir 
-		CupomFiscal.NOME_LOJA = "";
-		CupomFiscal.LOGRADOURO = "";
-		CupomFiscal.NUMERO = 0;
-		CupomFiscal.COMPLEMENTO = "";
-		CupomFiscal.BAIRRO = "";
-		CupomFiscal.MUNICIPIO = "";
-		CupomFiscal.ESTADO = "";
-		CupomFiscal.CEP = "";
-		CupomFiscal.TELEFONE = "";
-		CupomFiscal.OBSERVACAO = "";
-		CupomFiscal.CNPJ = "";
-		CupomFiscal.INSCRICAO_ESTADUAL = "";
+		CupomFiscal.NOME_LOJA = "Pibit.inc";
+		CupomFiscal.LOGRADOURO = "Rua Jose Pedro";
+		CupomFiscal.NUMERO = 110;
+		CupomFiscal.COMPLEMENTO = "Casa";
+		CupomFiscal.BAIRRO = "Virgilio Ribeiro";
+		CupomFiscal.MUNICIPIO = "Jacarau";
+		CupomFiscal.ESTADO = "PB";
+		CupomFiscal.CEP = "58278-000";
+		CupomFiscal.TELEFONE = "(83) 8603-6511";
+		CupomFiscal.OBSERVACAO = "Proximo a Pizzaria";
+		CupomFiscal.CNPJ = "99.779.325/0001-81";
+		CupomFiscal.INSCRICAO_ESTADUAL = "324.632.739.801";
 		
 		//E atualize o texto esperado abaixo
-		rodarTestarOutput("" + BREAK);
+		rodarTestarOutput("Pibit.inc" + BREAK +
+				 		"Rua Jose Pedro, 110 Casa" + BREAK +
+						"Virgilio Ribeiro - Jacarau - PB" + BREAK +
+						"CEP:58278-000 Tel (83) 8603-6511" + BREAK +
+						"Proximo a Pizzaria" + BREAK +
+						"CNPJ: 99.779.325/0001-81" + BREAK +
+						"IE: 324.632.739.801" + BREAK);
 	}
 
 	private void rodarTestarOutput(String expected) {
