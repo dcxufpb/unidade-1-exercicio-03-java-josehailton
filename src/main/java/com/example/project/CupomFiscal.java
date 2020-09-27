@@ -67,7 +67,7 @@ public class CupomFiscal {
 		_cep + _telefone + p_L +
 		OBSERVACAO + p_L +
 		_cnpj + p_L +
-		_inscricao_estadual);	
+		_inscricao_estadual + p_L);	
 	}
 
 	public static void main(final String[] args) {
