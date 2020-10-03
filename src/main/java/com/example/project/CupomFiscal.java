@@ -2,7 +2,7 @@ package com.example.project;
 
 public class CupomFiscal {
 
-	public static String NOME_LOJA = "Arcos Dourados Com. de Alimentos LTDA";
+	 public static String NOME_LOJA = "Arcos Dourados Com. de Alimentos LTDA";
 	public static String LOGRADOURO = "Av. Projetada Leste";
 	public static int NUMERO = 500;
 	public static String COMPLEMENTO = "EUC F32/33/34";
@@ -18,6 +18,7 @@ public class CupomFiscal {
 	private static String p_L = System.lineSeparator();
 	
 	public static String imprimirCupom(){
+		
 		if (NOME_LOJA.isEmpty()){
 			return "O campo nome da loja é obrigatório";
 		}
@@ -87,6 +88,7 @@ public class CupomFiscal {
                 
                 return cupomPronto;
 	}
+
 
 	public static void main(final String[] args) {
 		imrpimirCupom();
