@@ -60,6 +60,10 @@ public class CupomFiscal {
 		String _telefone = "";
 		if(!"".equals(TELEFONE)){
 			_telefone = "Tel " + TELEFONE;
+                        
+                        if(!"".equals(CEP)){
+				_telefone = " " + _telefone;
+			}
 		}
 		
 		String _observacao = "";
