@@ -17,7 +17,7 @@ public class CupomFiscal {
 	
 	private static String p_L = System.lineSeparator();
 	
-	public static void imprimirCupom(){
+	public static String imprimirCupom(){
 		if (NOME_LOJA.isEmpty()){
 			return "O campo nome da loja é obrigatório";
 		}
