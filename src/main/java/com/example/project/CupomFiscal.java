@@ -20,22 +20,28 @@ public class CupomFiscal {
 	public static void imprimirCupom(){
 		
 		if (NOME_LOJA.isEmpty()){
-			System.out.printf("O campo nome da loja é obrigatório");
-			return;
+			return "O campo nome da loja é obrigatório";
 		}
+		
 		if (LOGRADOURO.isEmpty()){
-			System.out.printf("O campo logradouro do endereço é obrigatório");
-			return;
+			return"O campo logradouro do endereço é obrigatório";
 		}
+		
 		String _logradouro = LOGRADOURO + ", ";
 		String _numero = "0";
+		
 		if (NUMERO == 0){
 			_numero = "s/n";
 		}else{
-			_numero = String.format ("%d", NUMERO);
-		}		
+			_numero = NUMERO;
+		}
+		
 		String _complemento = " " + COMPLEMENTO;
-		String _bairro = BAIRRO.isEmpty()? "" : BAIRRO + " - ";
+
+		String _BAIRRO = "";
+		if(BAIRRO != ""){
+			_BAIRRO = BAIRRO + " - " ;
+		}
 
 		if (MUNICIPIO.isEmpty()){
 			System.out.printf("O campo município do endereço é obrigatório");
@@ -47,20 +53,30 @@ public class CupomFiscal {
 			System.out.printf("O campo estado do endereço é obrigatório");
 			return;
 		}
-		String _cep = CEP.isEmpty()? "" : "CEP:" + CEP;
-		String _telefone = TELEFONE.isEmpty()? "" : " Tel " + TELEFONE;
+		
+		String _CEP = "";
+		if(CEP != ""){
+			_CEP = "CEP:" + CEP;
+		}
+		
+		String _TELEFONE = "";
+		if(TELEFONE != ""){
+			_TELEFONE = "Tel " + TELEFONE;
+		}
+		
+		
 
 		if (CNPJ.isEmpty()){
-			System.out.printf("O campo CNPJ da loja é obrigatório");
-			return;
+			return "O campo CNPJ da loja é obrigatório";
 		}
 		String _cnpj = "CNPJ: " + CNPJ;
 
 		if (INSCRICAO_ESTADUAL.isEmpty()){
-			System.out.printf("O campo inscrição estadual da loja é obrigatório");
-			return;
+			return "O campo inscrição estadual da loja é obrigatório";
 		}
 		String _inscricao_estadual = "IE: " + INSCRICAO_ESTADUAL;
+		
+		
 		System.out.println (NOME_LOJA + p_L +
 		_logradouro + _numero + _complemento + p_L +
 		_bairro + _municipio + ESTADO + p_L +
