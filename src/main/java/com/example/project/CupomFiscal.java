@@ -18,7 +18,6 @@ public class CupomFiscal {
 	private static String p_L = System.lineSeparator();
 	
 	public static void imprimirCupom(){
-		
 		if (NOME_LOJA.isEmpty()){
 			return "O campo nome da loja é obrigatório";
 		}
@@ -33,38 +32,39 @@ public class CupomFiscal {
 		if (NUMERO == 0){
 			_numero = "s/n";
 		}else{
-			_numero = NUMERO;
+			_numero = Integer.toString(NUMERO);
 		}
 		
 		String _complemento = " " + COMPLEMENTO;
 
-		String _BAIRRO = "";
-		if(BAIRRO != ""){
-			_BAIRRO = BAIRRO + " - " ;
+		String _bairro = "";
+		if(!"".equals(BAIRRO)){
+			_bairro = BAIRRO + " - " ;
 		}
 
 		if (MUNICIPIO.isEmpty()){
-			System.out.printf("O campo município do endereço é obrigatório");
-			return;
+			return "O campo município do endereço é obrigatório";
 		}
 		String _municipio = MUNICIPIO + " - ";
 
 		if (ESTADO.isEmpty()){
-			System.out.printf("O campo estado do endereço é obrigatório");
-			return;
+			return "O campo estado do endereço é obrigatório";
 		}
 		
-		String _CEP = "";
-		if(CEP != ""){
-			_CEP = "CEP:" + CEP;
+		String _cep = "";
+		if(!"".equals(CEP)){
+			_cep = "CEP:" + CEP;
 		}
 		
-		String _TELEFONE = "";
-		if(TELEFONE != ""){
-			_TELEFONE = "Tel " + TELEFONE;
+		String _telefone = "";
+		if(!"".equals(TELEFONE)){
+			_telefone = "Tel " + TELEFONE;
 		}
 		
-		
+		String _observacao = "";
+		if (!"".equals(OBSERVACAO)){
+			_observacao = OBSERVACAO;
+		}
 
 		if (CNPJ.isEmpty()){
 			return "O campo CNPJ da loja é obrigatório";
@@ -74,16 +74,18 @@ public class CupomFiscal {
 		if (INSCRICAO_ESTADUAL.isEmpty()){
 			return "O campo inscrição estadual da loja é obrigatório";
 		}
-		String _inscricao_estadual = "IE: " + INSCRICAO_ESTADUAL;
+		String _inscricaoEstadual = "IE: " + INSCRICAO_ESTADUAL;
 		
 		
-		System.out.println (NOME_LOJA + p_L +
-		_logradouro + _numero + _complemento + p_L +
-		_bairro + _municipio + ESTADO + p_L +
-		_cep + _telefone + p_L +
-		OBSERVACAO + p_L +
-		_cnpj + p_L +
-		_inscricao_estadual + p_L);	
+		String cupomPronto = String.format("%s",NOME_LOJA) + p_L;
+		cupomPronto += String.format("%s, %s%s",_logradouro,_numero,_complemento) + p_L;
+		cupomPronto += String.format("%s%s - %s",_bairro,_municipio,ESTADO) + p_L;
+		cupomPronto += String.format("%s%s",_cep,_telefone) + p_L;
+		cupomPronto += String.format("%s",_observacao) + p_L;
+		cupomPronto += String.format("CNPJ: %s",_cnpj) + p_L;
+		cupomPronto += String.format("IE: %s",_inscricaoEstadual) + p_L;
+                
+                return cupomPronto;
 	}
 
 	public static void main(final String[] args) {
