@@ -94,7 +94,7 @@ public class CupomFiscal {
 
 
 	public static void main(final String[] args) {
-		imrpimirCupom();
+		System.out.print( imprimirCupom() );
 	}
 
 }
